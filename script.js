@@ -1,18 +1,18 @@
 // fetch("https://reqres.in/api/users").then(res=>console.log(res));
 
-/* All Users
+/* All Users 
 fetch("https://reqres.in/api/users")
-.then(res=>res.json())
+.then(res=>res.json()) //.json allows it to be converted to object
 .then(data=>console.log(data));
 */
 
-/* Single User 
+/* Single User error status 404
 fetch("https://reqres.in/api/users/25")
 .then(res=>res.json())
 .then(data=>console.log(data));
 */
 
-/* add.catch() method to get any errors. this will not work unless there is some sort of network error.
+/* add.catch() method to get any errors. this will not work unless there is some sort of network error. 
 fetch("https://reqres.in/api/users/25")
 .then(res=>res.json())
 .then(data=>console.log(data))
@@ -20,23 +20,25 @@ fetch("https://reqres.in/api/users/25")
 */
  
 /*
-fetch("https://reqres.in/api/users")
-.then(res=> {
+fetch("https://reqres.in/api/users/25")
+.then((res)=> {
     if(res.ok){
         console.log('Fetch Successful');
     }
     else{
         console.log('Fetch is NOT SUCCESSFUL');
     }
-    res.json()
-})
-.then((data)=>console.log(data))
-.catch(error=>console.log("Error"));
+    res.json();
+}).then((data)=>{
+    console.log(data)
+    }).catch((error)=>{
+        console.log("Error")
+        });
 */
 
 // GET, POST
 
-/* POST REQUEST */
+/* POST REQUEST 
 fetch("https://reqres.in/api/users",{
     method: 'POST',
     headers: {
@@ -46,7 +48,11 @@ fetch("https://reqres.in/api/users",{
         name: 'New User 1',
     }) 
 })
-.then(res=> {
-    return res.json()})
-.then((data)=>console.log(data))
-.catch(error=>console.log("Error"));
+.then((res)=> {
+    return res.json()
+    }).then((data)=>{
+        console.log(data)
+        }).catch((error)=>{
+            console.log("Error")
+            });
+*/
